@@ -1,118 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Mansi Varshney</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mansi Varshney</title>
 
-<style>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: linear-gradient(180deg, #f8fafc, #eef2f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #333;
+            padding: 40px 20px;
+        }
 
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
-background:linear-gradient(180deg,#f8fafc,#eef2f7);
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-text-align:center;
-color:#333;
-padding:20px;
-}
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
-/* fade animation */
+        .card {
+            max-width: 420px;
+            width: 100%;
+            animation: fadeIn 1.4s ease;
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+        }
 
-@keyframes fadeIn {
-0% {opacity:0; transform:translateY(20px);}
-100% {opacity:1; transform:translateY(0);}
-}
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin: auto;
+            opacity: .8;
+            margin-bottom: 20px;
+        }
 
-.card{
-max-width:420px;
-width:100%;
-animation:fadeIn 1.4s ease;
-}
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #1f2937;
+        }
 
-.icon{
-width:60px;
-height:60px;
-margin:auto;
-opacity:.8;
-margin-bottom:20px;
-}
+        .subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-top: 6px;
+        }
 
-h1{
-font-size:28px;
-margin:0;
-}
+        .line {
+            width: 50px;
+            height: 2px;
+            background: #d1d5db;
+            margin: 25px auto;
+        }
 
-.subtitle{
-font-size:16px;
-color:#6b7280;
-margin-top:6px;
-}
+        .tagline {
+            font-size: 20px;
+            margin: 20px 0;
+            font-weight: 300;
+            line-height: 1.4;
+            color: #4b5563;
+        }
 
-.tagline{
-font-size:22px;
-margin:40px 0 25px;
-font-weight:300;
-line-height:1.4;
-}
+        /* Review Section Styles */
+        .reviews-header {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
 
-.line{
-width:50px;
-height:2px;
-background:#d1d5db;
-margin:20px auto;
-}
+        #reviews-container {
+            text-align: left;
+            margin-top: 20px;
+        }
 
-.note{
-font-size:15px;
-color:#6b7280;
-}
+        .review-card {
+            background: #f9fafb;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #f1f5f9;
+            font-size: 14px;
+        }
 
-.footer{
-margin-top:40px;
-font-size:13px;
-color:#9ca3af;
-}
+        .reviewer-name {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 4px;
+        }
 
-</style>
+        .review-text {
+            color: #6b7280;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .keyword-highlight {
+            color: #1f2937;
+            font-weight: 600;
+            background-color: #fef08a;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #cbd5e1;
+        }
+
+        a.google-link {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="card">
 
-<div class="icon">
+    <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5">
+            <path d="M4 14s2-2 4-2 4 2 6 2 4-2 6-2"/>
+            <path d="M4 18s2-2 4-2 4 2 6 2 4-2 6-2"/>
+            <circle cx="12" cy="6" r="2"/>
+        </svg>
+    </div>
 
-<svg viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5">
-<path d="M4 14s2-2 4-2 4 2 6 2 4-2 6-2"/>
-<path d="M4 18s2-2 4-2 4 2 6 2 4-2 6-2"/>
-<circle cx="12" cy="6" r="2"/>
-</svg>
+    <h1>Dr. Mansi Varshney</h1>
+    <div class="subtitle">BPT, MPT (Ortho)</div>
+
+    <div class="line"></div>
+
+    <div class="tagline">
+        Healing through movement and care.
+    </div>
+
+    <div class="line"></div>
+
+    <div class="reviews-header">Patient Experiences</div>
+    
+    <div id="reviews-container">
+        </div>
+
+    <p class="note">
+        This space is being prepared for the work and lives you will change.
+    </p>
+
+    <div class="footer">
+        A small place on the internet saved for Dr. Mansi Varshney.
+    </div>
 
 </div>
 
-<h1>Dr. Mansi Varshney</h1>
-<div class="subtitle">BPT, MPT (Ortho)</div>
+<script>
+    // To add more reviews, just add another object to this array.
+    const reviews = [
+        {
+            name: "Verified Patient",
+            text: "Dr. Mansi is very professional and her treatment plan was excellent. I felt relief from my back pain after just a few sessions."
+        },
+        {
+            name: "Patient Review",
+            text: "The clinic staff, especially Mansi, are very cooperative and experienced. Highly recommended for physiotherapy."
+        }
+    ];
 
-<div class="line"></div>
+    function displayReviews() {
+        const container = document.getElementById('reviews-container');
+        
+        if (reviews.length === 0) {
+            container.innerHTML = '<p style="text-align:center; color:#9ca3af; font-size:13px;">No reviews found mentioning Mansi.</p>';
+            return;
+        }
 
-<div class="tagline">
-Healing through movement and care.
-</div>
+        reviews.forEach(review => {
+            const card = document.createElement('div');
+            card.className = 'review-card';
+            
+            // This line automatically highlights "Mansi" whenever it appears
+            const highlightedText = review.text.replace(/Mansi/gi, (match) => `<span class="keyword-highlight">${match}</span>`);
 
-<div class="line"></div>
+            card.innerHTML = `
+                <span class="reviewer-name">${review.name}</span>
+                <div class="review-text">"${highlightedText}"</div>
+            `;
+            container.appendChild(card);
+        });
+    }
 
-<p class="note">
-This space is being prepared for the work and lives you will change.
-</p>
-
-<div class="footer">
-A small place on the internet saved for Dr. Mansi Varshney.
-</div>
-
-</div>
+    // Call the function on load
+    window.onload = displayReviews;
+</script>
 
 </body>
 </html>
