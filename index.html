@@ -13,10 +13,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            height: 100vh;
             text-align: center;
             color: #333;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         @keyframes fadeIn {
@@ -32,6 +32,7 @@
             padding: 40px;
             border-radius: 24px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            position: relative;
         }
 
         .icon {
@@ -42,137 +43,66 @@
             margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 28px;
-            margin: 0;
-            color: #1f2937;
-        }
+        h1 { font-size: 28px; margin: 0; color: #1f2937; }
+        .subtitle { font-size: 16px; color: #6b7280; margin-top: 6px; }
+        .line { width: 40px; height: 2px; background: #d1d5db; margin: 20px auto; }
+        .tagline { font-size: 20px; margin: 20px 0; font-weight: 300; line-height: 1.4; color: #4b5563; }
 
-        .subtitle {
-            font-size: 16px;
-            color: #6b7280;
-            margin-top: 6px;
-        }
-
-        .line {
-            width: 50px;
-            height: 2px;
-            background: #d1d5db;
-            margin: 25px auto;
-        }
-
-        .tagline {
-            font-size: 20px;
+        /* Review Slider Styles */
+        .review-section {
+            min-height: 160px; /* Prevents card jumping when text length changes */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             margin: 20px 0;
-            font-weight: 300;
-            line-height: 1.4;
-            color: #4b5563;
         }
 
-        /* Review Section Styles */
-        .reviews-header {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #9ca3af;
-            margin-bottom: 15px;
+        #review-display {
+            transition: opacity 0.8s ease-in-out;
+            opacity: 1;
         }
 
-        #reviews-container {
-            text-align: left;
-            margin-top: 20px;
-        }
+        .review-card { text-align: center; }
+        .stars { color: #fbbf24; font-size: 14px; margin-bottom: 8px; }
+        .reviewer-name { display: block; font-weight: 600; color: #374151; margin-bottom: 6px; font-size: 14px; }
+        .review-text { color: #6b7280; line-height: 1.5; font-style: italic; font-size: 15px; }
+        .keyword-highlight { color: #1f2937; font-weight: 600; }
 
-        .review-card {
-            background: #f9fafb;
-            padding: 16px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #f1f5f9;
-            font-size: 14px;
-        }
-
-        .reviewer-name {
-            display: block;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 4px;
-        }
-
-        .review-text {
-            color: #6b7280;
-            line-height: 1.5;
-            font-style: italic;
-        }
-
-        .keyword-highlight {
-            color: #1f2937;
-            font-weight: 600;
-            background-color: #fef08a;
-            padding: 0 2px;
-            border-radius: 2px;
-        }
-
-        .note {
-            font-size: 14px;
-            color: #9ca3af;
-            margin-top: 30px;
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #cbd5e1;
-        }
-
-        a.google-link {
-            color: #6366f1;
-            text-decoration: none;
-            font-weight: 500;
-        }
+        .note { font-size: 14px; color: #9ca3af; margin-top: 30px; }
+        .footer { margin-top: 20px; font-size: 11px; color: #cbd5e1; letter-spacing: 0.5px; }
     </style>
 </head>
 
 <body>
 
 <div class="card">
-
     <div class="icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5">
-            <path d="M4 14s2-2 4-2 4 2 6 2 4-2 6-2"/>
-            <path d="M4 18s2-2 4-2 4 2 6 2 4-2 6-2"/>
-            <circle cx="12" cy="6" r="2"/>
+            <path d="M4 14s2-2 4-2 4 2 6 2 4-2 6-2"/><path d="M4 18s2-2 4-2 4 2 6 2 4-2 6-2"/><circle cx="12" cy="6" r="2"/>
         </svg>
     </div>
 
     <h1>Dr. Mansi Varshney</h1>
     <div class="subtitle">BPT, MPT (Ortho)</div>
-
+    <div class="line"></div>
+    <div class="tagline">Healing through movement and care.</div>
     <div class="line"></div>
 
-    <div class="tagline">
-        Healing through movement and care.
-    </div>
-
-    <div class="line"></div>
-
-    <div class="reviews-header">Patient Experiences</div>
-    
-    <div id="reviews-container">
+    <div class="review-section">
+        <div id="review-display">
+            <div class="stars">★★★★★</div>
+            <div id="review-content">
+                <span class="reviewer-name" id="rev-name">Loading experiences...</span>
+                <div class="review-text" id="rev-text"></div>
+            </div>
         </div>
-
-    <p class="note">
-        This space is being prepared for the work and lives you will change.
-    </p>
-
-    <div class="footer">
-        A small place on the internet saved for Dr. Mansi Varshney.
     </div>
 
+    <p class="note">Creating a space for health and recovery.</p>
+    <div class="footer">DR. MANSI VARSHNEY • PORTFOLIO 2026</div>
 </div>
 
 <script>
-    // To add more reviews, just add another object to this array.
     const reviews = [
     { name: "Akshay Sharma", text: "The experience was exceptional... Senior physical therapists—Dr. Wasim, Faraz, Mansi, and Rohit demonstrate extensive knowledge." },
     { name: "pankhuri bahadur", text: "Special thanks to Mansi who takes care of my requirements. It is a professional centre with adequate equipments." },
@@ -202,31 +132,37 @@
     { name: "Himanshu Rajput", text: "Dr Mansi is the best doctor she is treated me and guided me well." }
 ];
 
-    function displayReviews() {
-        const container = document.getElementById('reviews-container');
-        
-        if (reviews.length === 0) {
-            container.innerHTML = '<p style="text-align:center; color:#9ca3af; font-size:13px;">No reviews found mentioning Mansi.</p>';
-            return;
-        }
+    let currentIndex = 0;
+    const displayElement = document.getElementById('review-display');
+    const nameElement = document.getElementById('rev-name');
+    const textElement = document.getElementById('rev-text');
 
-        reviews.forEach(review => {
-            const card = document.createElement('div');
-            card.className = 'review-card';
+    function updateReview() {
+        // Fade out
+        displayElement.style.opacity = 0;
+
+        setTimeout(() => {
+            const review = reviews[currentIndex];
+            nameElement.textContent = review.name;
             
-            // This line automatically highlights "Mansi" whenever it appears
-            const highlightedText = review.text.replace(/Mansi/gi, (match) => `<span class="keyword-highlight">${match}</span>`);
+            // Highlight Mansi
+            const highlighted = review.text.replace(/Mansi/gi, (match) => `<span class="keyword-highlight">${match}</span>`);
+            textElement.innerHTML = `"${highlighted}"`;
 
-            card.innerHTML = `
-                <span class="reviewer-name">${review.name}</span>
-                <div class="review-text">"${highlightedText}"</div>
-            `;
-            container.appendChild(card);
-        });
+            // Fade in
+            displayElement.style.opacity = 1;
+            
+            // Move to next or restart
+            currentIndex = (currentIndex + 1) % reviews.length;
+        }, 800); // This delay matches the CSS transition
     }
 
-    // Call the function on load
-    window.onload = displayReviews;
+    // Shuffle reviews on refresh so it's different every time
+    reviews.sort(() => Math.random() - 0.5);
+
+    // Initial call and interval
+    updateReview();
+    setInterval(updateReview, 8000); // Changes every 8 seconds
 </script>
 
 </body>
